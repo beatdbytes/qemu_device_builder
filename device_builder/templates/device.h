@@ -1,7 +1,7 @@
 /*
  * {{ DataModel.Block.Name }} Module in {{ DataModel.Arch }}
  *
- * Copyright @ 2021 {{ DataModel.current_usr  }} Infineon Technologies A.G.
+ * Copyright @ 2021 {{ DataModel.current_usr  }} beatdbytes.com.
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the

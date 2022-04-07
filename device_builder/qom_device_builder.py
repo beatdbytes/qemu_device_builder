@@ -20,6 +20,10 @@ class QemuDeviceBuilder:
         output = template.render(DataModel=self.model)
         device_name = f'{self.model.Block.Name.lower()}.h'
         self.create_file(data=output, output_folder=self.Output, file=device_name)
+        template = self.env.get_template('device_types.h')
+        output = template.render(DataModel=self.model)
+        device_name = f'{self.model.Block.Name.lower()}_types.h'
+        self.create_file(data=output, output_folder=self.Output, file=device_name)
 
     def gen_c(self):
         template = self.env.get_template('device.c')

@@ -16,34 +16,25 @@
 
 
 #ifndef {{ DataModel.Block.Name.upper() }}_H
-#define {{ DataModel.Block.Name }}_H
+#define {{ DataModel.Block.Name.upper() }}_H
 #include "hw/clock.h"
 #include "hw/irq.h"
 #include "hw/sysbus.h"
 #include "qemu/timer.h"
-typedef struct {
+#include "hw/ptimer.h"
+#include "{{ DataModel.Block.Name.lower() }}_types.h"
+#include "qom/object.h"
+#define TYPE_{{ DataModel.Block.Name.upper() }} "{{ DataModel.Block.Name.lower() }}"
+OBJECT_DECLARE_TYPE({{ DataModel.Block.Name.title() }},{{ DataModel.Block.Name.title() }}Class,{{ DataModel.Block.Name.upper() }})
+ struct {{ DataModel.Block.Name.title() }}{
     SysBusDevice parent;
     MemoryRegion iomem;
     {% for sfr in  DataModel.Block.SfrList %}
-    uint32_t {{ sfr.Name }}; //{{ sfr.Desc }}
+    {{sfr.Name }}_Bitfields {{ sfr.Name }}; //{{ sfr.Desc }}
     {% endfor %}
-} {{ DataModel.Block.Name }}State;
+};
 
-{% for sfr in  DataModel.Block.SfrList %}
-//Bitfields in register {{sfr.Name }}
-typedef union{
-    struct{
-{% for field in sfr.BitFields%}
-        uint32_t {{ field.Name }}:{{ field.Width }};//Start: {{field.Start}} End: {{ field.End }}
-{% endfor %}
-    };
-    uint32_t U;
-}{{sfr.Name }}_Bitfields;
-
-{% endfor %}
-
-#define TYPE_{{ DataModel.Block.Name.upper() }} "{{ DataModel.Block.Name }}"
-#define {{ DataModel.Block.Name.upper() }}(obj) \
-    OBJECT_CHECK({{ DataModel.Block.Name }}State, (obj), TYPE_{{ DataModel.Block.Name.upper() }})
-
+struct {{ DataModel.Block.Name.title() }}Class{
+    SysBusDeviceClass parent_class;
+};
 #endif //{{ DataModel.Block.Name }}_H

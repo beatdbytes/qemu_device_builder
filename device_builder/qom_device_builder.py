@@ -1,8 +1,8 @@
 import os
 from jinja2 import FileSystemLoader, Environment
 
-from qemu_device_builder.qemu_device_model.device_model import DeviceModel
-from qemu_device_builder.qemu_device_model.register_map_model import BLOCK
+from qemu_device_model.device_model import DeviceModel
+from qemu_device_model.register_map_model import BLOCK
 
 
 class QemuDeviceBuilder:

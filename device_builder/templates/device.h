@@ -24,7 +24,7 @@
 #include "hw/ptimer.h"
 #include "{{ DataModel.Block.Name.lower() }}_types.h"
 #include "qom/object.h"
-#define TYPE_{{ DataModel.Block.Name.upper() }} "{{ DataModel.Block.Name.lower() }}"
+#define TYPE_{{ DataModel.Block.Name.upper() }} "{{ DataModel.Arch.lower() }}-{{ DataModel.DeviceName.lower() }}"
 OBJECT_DECLARE_TYPE({{ DataModel.Block.Name.title() }},{{ DataModel.Block.Name.title() }}Class,{{ DataModel.Block.Name.upper() }})
  struct {{ DataModel.Block.Name.title() }}{
     SysBusDevice parent;

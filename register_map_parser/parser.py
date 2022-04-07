@@ -3,7 +3,7 @@ from typing import List
 
 from bs4 import BeautifulSoup as bs
 
-from qemu_device_builder.qemu_device_model.register_map_model import SFR, BitField, BLOCK
+from qemu_device_model.register_map_model import SFR, BitField, BLOCK
 
 
 class Parser:

@@ -1,0 +1,34 @@
+<BLOCK>
+    <!--Device Short Name -->
+    <BNAM>DEVICE</BNAM>
+    <INSTANCE>
+         <!--Device Instance Name-->
+         <INAME>DEVICE0</INAME>
+         <!--Start address of the Device Instantiation-->
+         <ISTART>F0000000</ISTART>
+         <!--End address of the Device Instantiation-->
+         <IEND>FFFFFFFF</IEND>
+    </INSTANCE>
+    <SFR>
+         <!--Register Short Name-->
+         <SNAM>REG1</SNAM>
+         <!--Register Long Description-->
+         <LNAM>Long name for the SFR</LNAM>
+         <!--Register bit length-->
+         <RTYP>32-bit</RTYP>
+         <!--Register base address-->
+         <ADDR>F0000000</ADDR>
+         <!--Register base address-->
+         <RVAL>00000000</RVAL>
+         <BITS>
+            <!--Register Bitfield Short Name-->
+            <BITSNAME>BTF0</BITSNAME>
+            <!--Bit field End Bit-->
+            <LOCH>31</LOCH>
+            <!--Bit Field First Bit-->
+            <LOCL>0</LOCL>
+            <!--Bit field access rights r-> readonly for SW, w -> writable for SW h-> updated by HW -->
+            <TYPE>rw</TYPE>           
+         </BITS>
+    </SFR>   
+</BLOCK>

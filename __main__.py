@@ -1,5 +1,5 @@
-from qemu_device_builder.cli import tool_main
-from qemu_device_builder.device_builder.cli import device_builder
+from cli import tool_main
+from device_builder.cli import device_builder
 
 commands = {
     'device_builder': device_builder

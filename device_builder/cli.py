@@ -3,8 +3,8 @@ from pathlib import Path
 
 import click
 
-from qemu_device_builder.device_builder.qom_device_builder import QemuDeviceBuilder
-from qemu_device_builder.register_map_parser.parser import Parser
+from device_builder.qom_device_builder import QemuDeviceBuilder
+from register_map_parser.parser import Parser
 
 
 @click.command()

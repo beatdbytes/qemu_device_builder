@@ -1,4 +1,4 @@
-from qemu_device_builder.qemu_device_model.register_map_model import BLOCK
+from qemu_device_model.register_map_model import BLOCK
 import getpass
 
 
@@ -7,7 +7,7 @@ class DeviceModel:
         self.Block = block
         self.Block.Size = str(((int(self.Block.End,16) - int(self.Block.Start,16))+1))
         self.Arch = architecture
-        self.DeviceName = {self.Block.Name}
+        self.DeviceName = self.Block.Name
         self.Block.Name = f'{self.Arch.title()}_{self.Block.Name}'
         print(self.Block.Name)
         self.current_usr = getpass.getuser()
